@@ -14,6 +14,7 @@ read -p "Enter a secret" secret
 echo "$secret" >> ~/secure_vault/secrets.txt
 echo "The secret has been added"
 ;;
+#Replacing a secret
 2)
 read -p "Enter a  secret to replace:" old
 read -p "Enter a new secret" new
@@ -24,6 +25,20 @@ else
 echo "No match found"
 fi
 ;;
+#Log entry
+3)
+	read -p "Enter log entry" log
+	echo "$(date): $log" >> ~/secure_vault/logs.txt
+	;;
+#Access denied!!
+4)
+ echo "ACCESS DENIED 🚫"
+ ;;
+#exit
+5)
+	echo "we are exiting"
+	break
+	;;
 *)
 echo "Invalid choice"
 ;;
