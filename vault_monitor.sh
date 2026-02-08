@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-report=~/secure_vault/vault_report.txt
+report=secure_vault/vault_report.txt
 echo "Vault Security Report" >> $report
 echo "---------------------" >> $report
 
-for file in ~/secure_vault/*; do
+for file in secure_vault/*; do
 	name=$(basename "$file")
 	size=$(stat -c%s "$file")
 	modifiedDate=$(stat -c%y "$file")
